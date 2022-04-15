@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body, app-root { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.content-outer-container {
+    background-color: lightgray;
+    min-height: 80%;
+    padding: 10px;
+}
+
+app-header {
+    min-height: 10%;
+}
+
+app-footer {
+    min-height: 10%;
+}
+
+match-card {
+    cursor: pointer;
+}
+
+.parent-container {
+    background-color: #fff;
+    border-radius: 5px;
+    /* text-align: center; */
+    padding: 16px;
+}
+
+.page-title {
+    color: rgb(100 149 237);
+    font-size: 24px;
+    font-weight: 500;
+}

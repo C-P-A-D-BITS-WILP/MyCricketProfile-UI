@@ -1,0 +1,42 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .header-button {
+    width: 180px;
+  }
+  
+  /* .header-button:hover {
+    width: 180px;
+  } */
+  
+  .logo-img {
+    height: 30px;
+    width: 30px;
+  }
+  
+  .logo {
+    padding-top: 10px;
+  }
+  
+  .fill:hover,
+  .fill:focus {
+    box-shadow: inset 0 0 0 2em var(--hover);
+  }
+
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
