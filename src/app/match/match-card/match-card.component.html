@@ -1,0 +1,19 @@
+<mat-card class="match-card">
+    <mat-card-subtitle>{{matchCard.tournament_name}}</mat-card-subtitle>
+    <mat-card-content>
+        <table>
+            <tr>
+                <td>{{matchCard.team1}}</td>
+                <td>{{matchCard.score1}}</td>
+            </tr>
+
+            <tr>
+                <td>{{matchCard.team2}}</td>
+                <td>{{matchCard.score2}}</td>
+            </tr>
+        </table>
+        <br />
+
+        <p class = 'match-summary'>{{matchCard.summary}}</p>
+    </mat-card-content>
+</mat-card>

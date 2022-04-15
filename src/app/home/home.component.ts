@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../common/login/login.service';
-// import { MatchCard } from '../match/match-card/match-card';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +7,9 @@ import { LoginService } from '../common/login/login.service';
 })
 export class HomeComponent implements OnInit {
 
-
-
-  constructor(private loginService: LoginService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
-
 }

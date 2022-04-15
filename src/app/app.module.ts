@@ -31,6 +31,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { RecentMatchComponent } from './match/recent-match/recent-match.component';
+import { MatchCardComponent } from './match/match-card/match-card.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatTableModule } from '@angular/material/table';
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
+    RecentMatchComponent,
+    MatchCardComponent,
   ],
   imports: [
     BrowserModule,

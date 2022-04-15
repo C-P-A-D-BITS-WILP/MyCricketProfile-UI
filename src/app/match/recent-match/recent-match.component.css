@@ -1,0 +1,10 @@
+.recent-match-card {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.hs {
+    white-space: nowrap;
+    overflow-x: auto;
+}

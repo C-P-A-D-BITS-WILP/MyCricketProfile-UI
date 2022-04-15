@@ -1,0 +1,8 @@
+<mat-card class="match-card">
+    <mat-card-title class="page-title">Recent Matches</mat-card-title>
+    <div class="hs">
+        <br />
+        <match-card *ngFor="let score of matchCard" [matchCard]="score" class="recent-match-card"
+            (click)="loadDetailedScore(score)"></match-card>
+    </div>
+</mat-card>
