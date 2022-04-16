@@ -1,0 +1,17 @@
+.player-list {
+    cursor: pointer;
+}
+
+.player-list:hover {
+    background-color: cornflowerblue;
+    color: #fff;
+}
+
+.player-search-field {
+    width: 100%;
+}
+
+.player-list-container {
+    overflow-y: auto;
+    max-height: 600px;
+}

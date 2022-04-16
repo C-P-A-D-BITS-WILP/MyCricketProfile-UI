@@ -33,6 +33,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { RecentMatchComponent } from './match/recent-match/recent-match.component';
 import { MatchCardComponent } from './match/match-card/match-card.component';
+import { TeamHomeComponent } from './team/team-home/team-home.component';
+import { TournamentHomeComponent } from './tournament/tournament-home/tournament-home.component';
+import { PlayerProfileComponent } from './player/player-profile/player-profile.component';
+import { SearchPlayerComponent } from './player/search-player/search-player.component';
+import { DetailedMatchScoreComponent } from './match/detailed-match-score/detailed-match-score.component';
+import { MatchHomeComponent } from './match/match-home/match-home.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +50,12 @@ import { MatchCardComponent } from './match/match-card/match-card.component';
     PageNotFoundComponent,
     RecentMatchComponent,
     MatchCardComponent,
+    TeamHomeComponent,
+    TournamentHomeComponent,
+    DetailedMatchScoreComponent,
+    PlayerProfileComponent,
+    SearchPlayerComponent,
+    MatchHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,49 @@
+<div class="parent-container">
+    <span class="page-title">{{player.name}}</span>
+
+    <br /> <br />
+    <span class="page-sub-title">Batting Summary</span>
+    <table class="player-score-table">
+        <thead class="player-score-table-header">
+            <tr>
+                <th *ngFor="let colHeaders of battingColHeaders">{{colHeaders}}</th>
+            </tr>
+        </thead>
+        <tbody class="player-score-table-body">
+            <tr *ngFor="let player of dataSource">
+                <td>{{player.score.matches}}</td>
+                <td>{{player.score.batting.innings}}</td>
+                <td>{{player.score.batting.notOut}}</td>
+                <td>{{player.score.batting.runs}}</td>
+                <td>{{player.score.batting.highestScore}}</td>
+                <td>{{player.score.batting.strikeRate}}</td>
+                <td>{{player.score.batting.avg}}</td>
+                <td>{{player.score.batting.fifties}}</td>
+                <td>{{player.score.batting.hundreds}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br /><br />
+
+    <span class="page-sub-title">Bowling Summary</span>
+    <table class="player-score-table">
+        <thead class="player-score-table-header">
+            <tr>
+                <th *ngFor="let colHeaders of bowlingColHeaders">{{colHeaders}}</th>
+            </tr>
+        </thead>
+        <tbody class="player-score-table-body">
+            <tr *ngFor="let player of dataSource">
+                <td>{{player.score.matches}}</td>
+                <td>{{player.score.bowling.innings}}</td>
+                <td>{{player.score.bowling.balls}}</td>
+                <td>{{player.score.bowling.runs}}</td>
+                <td>{{player.score.bowling.wickets}}</td>
+                <td>{{player.score.bowling.average}}</td>
+                <td>{{player.score.bowling.economy}}</td>
+                <td>{{player.score.bowling.fiver}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

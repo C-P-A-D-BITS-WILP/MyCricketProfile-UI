@@ -1,0 +1,19 @@
+.player-score-table {
+    /* border-style: groove; */
+    border-color: black;
+    border-width: thin;
+    width: 100%;
+}
+
+.player-score-table-header {
+    background-color: lavender;
+}
+
+.player-score-table-body {
+    text-align: center;
+}
+
+.page-sub-title {
+    font-size: 20px;
+    font-weight: 400;
+}

@@ -1,0 +1,16 @@
+<div class="parent-container">
+    <br />
+    <mat-form-field class="player-search-field" appearance="fill">
+        <mat-label>Player Name</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-list class="player-list-container">
+        <div *ngFor="let player of players">
+            <mat-list-item class="player-list" [routerLink]="['/player', player.id]">{{player.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-list>
+</div>
