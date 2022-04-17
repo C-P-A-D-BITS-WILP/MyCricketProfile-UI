@@ -27,6 +27,6 @@ export class RecentMatchComponent implements OnInit {
   }
 
   loadDetailedScore(match: MatchCard): void {
-    this.router.navigate(['/detailed-score', { id: match.id }]);
+    this.router.navigate(['/detailed-score', match.id ]);
   }
 }

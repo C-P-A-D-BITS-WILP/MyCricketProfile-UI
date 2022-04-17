@@ -1,4 +1,4 @@
-<div class="parent-container">
+<div class="parent-container" *ngIf="isDataAvailable">
     <span class="page-title">{{player.name}}</span>
 
     <br /> <br />
@@ -10,16 +10,16 @@
             </tr>
         </thead>
         <tbody class="player-score-table-body">
-            <tr *ngFor="let player of dataSource">
+            <tr>
                 <td>{{player.score.matches}}</td>
-                <td>{{player.score.batting.innings}}</td>
-                <td>{{player.score.batting.notOut}}</td>
-                <td>{{player.score.batting.runs}}</td>
-                <td>{{player.score.batting.highestScore}}</td>
-                <td>{{player.score.batting.strikeRate}}</td>
-                <td>{{player.score.batting.avg}}</td>
-                <td>{{player.score.batting.fifties}}</td>
-                <td>{{player.score.batting.hundreds}}</td>
+                <td>{{player.score.battingInnings}}</td>
+                <td>{{player.score.notOut}}</td>
+                <td>{{player.score.runsScored}}</td>
+                <td>{{player.score.highestScore}}</td>
+                <td>{{player.score.strikeRate}}</td>
+                <td>{{player.score.battingAvg}}</td>
+                <td>{{player.score.fifties}}</td>
+                <td>{{player.score.hundreds}}</td>
             </tr>
         </tbody>
     </table>
@@ -34,15 +34,15 @@
             </tr>
         </thead>
         <tbody class="player-score-table-body">
-            <tr *ngFor="let player of dataSource">
+            <tr>
                 <td>{{player.score.matches}}</td>
-                <td>{{player.score.bowling.innings}}</td>
-                <td>{{player.score.bowling.balls}}</td>
-                <td>{{player.score.bowling.runs}}</td>
-                <td>{{player.score.bowling.wickets}}</td>
-                <td>{{player.score.bowling.average}}</td>
-                <td>{{player.score.bowling.economy}}</td>
-                <td>{{player.score.bowling.fiver}}</td>
+                <td>{{player.score.bowlingInnings}}</td>
+                <td>{{player.score.ballsBowled}}</td>
+                <td>{{player.score.runsGiven}}</td>
+                <td>{{player.score.wickets}}</td>
+                <td>{{player.score.bowlingAvg}}</td>
+                <td>{{player.score.economy}}</td>
+                <td>{{player.score.fiver}}</td>
             </tr>
         </tbody>
     </table>

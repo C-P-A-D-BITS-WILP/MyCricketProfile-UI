@@ -39,6 +39,7 @@ import { PlayerProfileComponent } from './player/player-profile/player-profile.c
 import { SearchPlayerComponent } from './player/search-player/search-player.component';
 import { DetailedMatchScoreComponent } from './match/detailed-match-score/detailed-match-score.component';
 import { MatchHomeComponent } from './match/match-home/match-home.component';
+import { UserProfileComponent } from './common/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MatchHomeComponent } from './match/match-home/match-home.component';
     DetailedMatchScoreComponent,
     PlayerProfileComponent,
     SearchPlayerComponent,
-    MatchHomeComponent
+    MatchHomeComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

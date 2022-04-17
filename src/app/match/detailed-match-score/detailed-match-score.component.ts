@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService } from '../match.service';
 
 @Component({
   selector: 'app-detailed-match-score',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedMatchScoreComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matchService: MatchService) { }
 
   ngOnInit(): void {
+    this.matchService.getDetailedScoreCard(10).subscribe(
+      response => {
+        console.info(response);
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
 }

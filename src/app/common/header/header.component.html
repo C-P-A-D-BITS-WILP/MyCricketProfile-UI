@@ -1,6 +1,5 @@
 <mat-toolbar color="primary">
-  <!-- Menu for System Browsers -->
-  <!-- <div fxShow="true" fxHide.lt-md="true"> -->
+
     <a mat-button class="header-button fill" routerLink='home'>
       <mat-icon class="logo-img" svgIcon="app_logo"></mat-icon>
       <span>My Cricket Profile</span>
@@ -24,39 +23,9 @@
       <mat-icon>account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+      <button mat-menu-item routerLink='user-profile'>Profile</button>
       <button mat-menu-item routerLink='team'>Team</button>
       <button mat-menu-item>Tournament</button>
       <mat-divider></mat-divider>
       <button mat-menu-item (click)="logout()">Logout</button>
     </mat-menu>
-  <!-- </div>
-
-  Menu for Mobile Browsers
-  <div fxShow="true" fxHide.gt-sm="true">
-    <a href="#" (click)="sidenav.toggle()">
-      <mat-icon style="color: white ;">menu</mat-icon>
-    </a>
-
-    <a mat-icon-button class="header-button" routerLink='home'>
-      <mat-icon class="logo-img" svgIcon="app_logo"></mat-icon>
-      <span>My Cricket Profile</span>
-    </a>
-  </div>
-</mat-toolbar>
-
-<mat-sidenav-container fxFlexFill fxHide.gt-sm="true" class="example-container">
-  <mat-sidenav #sidenav fxLayout="column" class="example-sidenav" mode="side">
-    <div fxLayout="column">
-      <a mat-button class="header-button fill">
-        <span>Match</span>
-      </a>
-      <a mat-button class="header-button fill" routerLink='tournament'>
-        <span>Tournament</span>
-      </a>
-      <a mat-button class="header-button fill">
-        <span>Player</span>
-      </a>
-      <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
-    </div>
-  </mat-sidenav>
-</mat-sidenav-container> -->
