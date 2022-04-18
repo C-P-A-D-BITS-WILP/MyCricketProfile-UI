@@ -1,1 +1,79 @@
-<p>detailed-match-score works!</p>
+<div *ngIf="isDataAvailable">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let inn of detailScore.innings; let i = index" [expanded]="step === i"
+      (opened)="setStep(i)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Innings {{i + 1}}
+        </mat-panel-title>
+        <mat-panel-description class="mat-expansion-panel-desc">
+          {{inn.battingTeamName}}: {{inn.totalScore}} - {{inn.wickets}} ({{inn.overs}} Overs)
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <table class="match-score-table">
+        <thead class="match-score-table-header">
+          <tr>
+            <th colspan="2">Batsmen</th>
+            <th>R</th>
+            <th>B</th>
+            <th>4s</th>
+            <th>6s</th>
+            <th>SR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let battingScore of inn.battingScores">
+            <td>{{battingScore.batsmanName}}</td>
+            <td *ngIf="battingScore.dismissed">c {{battingScore.caughtBy}} b {{battingScore.bowledBy}}</td>
+            <td *ngIf="!battingScore.dismissed"></td>
+            <td class="score-text">{{battingScore.runs}}</td>
+            <td>{{battingScore.balls}}</td>
+            <td>{{battingScore.fours}}</td>
+            <td>{{battingScore.sixers}}</td>
+            <td>{{battingScore.strikeRate}}</td>
+          </tr>
+          <tr>
+            <td>Extras</td>
+            <td></td>
+            <td colspan="5" class="score-text">{{inn.extras}}</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td></td>
+            <td colspan="5" class="score-text">{{inn.totalScore}} ({{inn.wickets}} wkts, {{inn.overs}} Ov)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br />
+
+      <table class="match-score-table">
+        <thead class="match-score-table-header">
+          <tr>
+            <th>Bowler</th>
+            <th>O</th>
+            <th>M</th>
+            <th>R</th>
+            <th>W</th>
+            <th>NB</th>
+            <th>WD</th>
+            <th>Eco</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bowlingScore of inn.bowlingScores">
+            <td>{{bowlingScore.bowlerName}}</td>
+            <td>{{bowlingScore.overs}}</td>
+            <td>{{bowlingScore.maidens}}</td>
+            <td>{{bowlingScore.runsGiven}}</td>
+            <td>{{bowlingScore.wickets}}</td>
+            <td>{{bowlingScore.noBalls}}</td>
+            <td>{{bowlingScore.wides}}</td>
+            <td>{{bowlingScore.economy}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

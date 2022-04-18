@@ -1,0 +1,20 @@
+.mat-expansion-panel-desc {
+  text-align: end;
+  text-align: end;
+  display: block;
+}
+
+.match-score-table {
+  border-color: black;
+  border-width: thin;
+  width: 100%;
+}
+
+.match-score-table-header {
+  background-color: lavender;
+  text-align: left;
+}
+
+.score-text {
+  font-weight: 500;
+}

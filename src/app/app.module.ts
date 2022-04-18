@@ -40,6 +40,7 @@ import { SearchPlayerComponent } from './player/search-player/search-player.comp
 import { DetailedMatchScoreComponent } from './match/detailed-match-score/detailed-match-score.component';
 import { MatchHomeComponent } from './match/match-home/match-home.component';
 import { UserProfileComponent } from './common/user-profile/user-profile.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { UserProfileComponent } from './common/user-profile/user-profile.compone
     MatMenuModule,
     MatSidenavModule,
     MatSnackBarModule,
+    MatExpansionModule
   ],
   providers: [
     LoginService,
