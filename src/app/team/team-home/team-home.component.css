@@ -1,0 +1,38 @@
+.inner-container {
+    /* padding: 5px; */
+    /* margin: 5px; */
+    border: darkgray solid thin;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.side-menu-list-item {
+    cursor: pointer;
+}
+
+.side-menu-list-item:hover {
+    background-color: cornflowerblue;
+}
+
+.team-search-field {
+    margin: 0 5px;
+    width: 98%;
+}
+
+.team-content {
+    overflow-x: hidden;
+}
+
+.team-side-menu {
+    overflow-x: hidden;
+}
+
+mat-drawer>div {
+    overflow-x: hidden;
+}
+
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}

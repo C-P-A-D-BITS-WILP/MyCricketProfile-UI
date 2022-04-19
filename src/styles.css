@@ -26,6 +26,10 @@ match-card {
     cursor: pointer;
 }
 
+.grayed-background {
+    background-color: lightgray;
+}
+
 .parent-container {
     background-color: #fff;
     border-radius: 5px;
