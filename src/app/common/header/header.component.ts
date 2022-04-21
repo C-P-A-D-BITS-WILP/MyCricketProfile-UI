@@ -15,7 +15,11 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   public user: SocialUser = new SocialUser;
 
-  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar, private authService: SocialAuthService) { }
+  constructor(
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private authService: SocialAuthService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -25,18 +29,18 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(user => {
       this.isLoggedIn = true;
       this.user = user;
-      this.openSnackBar(`Welcome back ${user.name}`, '');
+      this.openSnackBar(`Welcome back ${user.name}`, '', { duration: 2 * 1000 });
     });
   }
 
   logout(): void {
     this.isLoggedIn = false;
-    this.openSnackBar("You are successfully logged out", "");
+    this.openSnackBar("You are successfully logged out", "", { duration: 2 * 1000 });
     this.authService.signOut();
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+  openSnackBar(message: string, action: string, config: any) {
+    this._snackBar.open(message, action, config);
   }
 
 }

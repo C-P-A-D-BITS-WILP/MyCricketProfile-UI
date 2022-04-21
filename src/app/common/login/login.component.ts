@@ -14,13 +14,15 @@ export class LoginComponent implements OnInit {
 
   public user: SocialUser = new SocialUser;
 
-  constructor(public dialogRef: MatDialogRef<LoginComponent>, private loginService: LoginService, private authService: SocialAuthService) { }
+  constructor(public dialogRef: MatDialogRef<LoginComponent>,
+    private loginService: LoginService,
+    private authService: SocialAuthService) { }
 
   ngOnInit(): void {
     this.authService.authState.subscribe(user => {
       this.user = user;
 
-      if(user != null) {
+      if (user != null) {
         console.log(user);
         this.dialogRef.close(this.user);
       }
