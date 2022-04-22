@@ -1,0 +1,42 @@
+<table>
+    <tr>
+        <td class="table-title">
+            <span>Team Name</span>
+        </td>
+        <td class="table-value">
+            <span>{{team.name}}</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="table-title">
+            <span>Team Owner</span>
+        </td>
+        <td class="table-value">
+            <span>{{team.owner}}</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="table-title">
+            <span>Team Captain</span>
+        </td>
+        <td class="table-value">
+            <span>{{team.captain}}</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="table-title">
+            <span>Team Location</span>
+        </td>
+        <td class="table-value">
+            <span>{{team.location}}</span>
+        </td>
+    </tr>
+
+</table>
+
+<span class="sub-title">Players</span>
+<mat-list-item *ngFor="let player of team.players" class="player-list">{{player.name}}
+</mat-list-item>

@@ -36,3 +36,27 @@ mat-drawer>div {
 .mat-drawer-inner-container {
     overflow-x: hidden !important;
 }
+
+.grid-tile .mat-grid-tile-content {
+    display: block !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* border-style: solid; */
+    border-width: thin;
+    /* border-radius: 5px; */
+    border-color: lightgray;
+    border-right-style: solid;
+}
+
+.team-list:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.tab-group, .mat-tab-body-wrapper, .grid-tile  {
+    height: 100%;
+}
+
+mat-tab-body {
+    padding: 5px;;
+}

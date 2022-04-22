@@ -1,0 +1,14 @@
+.table-title {
+    text-align: right;
+    font-weight: 600;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.table-value {
+    font-weight: 400;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}

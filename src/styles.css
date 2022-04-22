@@ -10,8 +10,12 @@ body {
 
 .content-outer-container {
     background-color: lightgray;
-    min-height: 80%;
+    height: 80%;
     padding: 10px;
+}
+
+.content-inner-container {
+    height: 100%;
 }
 
 app-header {
@@ -35,6 +39,7 @@ match-card {
     border-radius: 5px;
     /* text-align: center; */
     padding: 16px;
+    height: 95%;
 }
 
 .page-title {

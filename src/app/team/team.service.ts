@@ -7,7 +7,6 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TeamService {
-
   getTeamsURL: string = '/teams';
   getMyTeamsURL: string = '/my-teams';
   getTeamURL: string = '';
@@ -30,5 +29,9 @@ export class TeamService {
           return throwError(error);
         })
       );
+  }
+
+  getTeamInfo(): Observable<any> {
+    throw new Error('Method not implemented.');
   }
 }

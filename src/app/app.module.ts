@@ -41,6 +41,8 @@ import { DetailedMatchScoreComponent } from './match/detailed-match-score/detail
 import { MatchHomeComponent } from './match/match-home/match-home.component';
 import { UserProfileComponent } from './common/user-profile/user-profile.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TeamInfoComponent } from './team/team-info/team-info.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     PlayerProfileComponent,
     SearchPlayerComponent,
     MatchHomeComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    TeamInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +88,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatMenuModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
   providers: [
     LoginService,
