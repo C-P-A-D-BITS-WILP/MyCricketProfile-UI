@@ -9,6 +9,7 @@ export class TeamCreateComponent implements OnInit {
 
   teamName: string = '';
   teamLocation: string = '';
+  teamSize: Number = 12;
 
   constructor() { }
 

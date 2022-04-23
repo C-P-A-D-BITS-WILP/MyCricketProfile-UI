@@ -56,8 +56,17 @@
                         </div>
                         <mat-list class="col-12 team-list-container">
                             <div *ngFor="let team of teams">
-                                <mat-list-item class="team-list" (click)='populateTeamData(team.id)'>{{team.name}}
+                                <mat-list-item class="team-list" (click)='populateTeamData(team.id)'>
+                                    <span class="col-sm-10">{{team.name}}</span>
+                                    <button class="col-sm-2" mat-icon-button [matMenuTriggerFor]="menu">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="manageTeam(team.id)">Manage Team</button>
+                                        <button mat-menu-item (click)="deleteTeam(team.id)">Delete Team</button>
+                                      </mat-menu>
                                 </mat-list-item>
+
                                 <mat-divider></mat-divider>
                             </div>
                         </mat-list>

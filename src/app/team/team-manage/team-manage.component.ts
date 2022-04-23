@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamManageComponent implements OnInit {
 
+teamName: String = '';
+teamSize!: Number;
+teamLocation !: String;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  editTeam(): void {
+
   }
 
 }

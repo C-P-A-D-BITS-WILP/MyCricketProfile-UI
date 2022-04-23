@@ -7,9 +7,12 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TeamService {
+
   getTeamsURL: string = '/teams';
   getMyTeamsURL: string = '/my-teams';
   getTeamURL: string = '';
+  softDeleteTeamURL: string = '/soft-delete-team';
+  getTeamInfoURL: string = '/team-info';
 
   constructor(private http: HttpClient) { }
 
@@ -22,8 +25,9 @@ export class TeamService {
       );
   }
 
-  getMyTeams(): Observable<any> {
-    return this.http.get<Response>(this.getMyTeamsURL)
+  getMyTeams(userId: number): Observable<any> {
+    const url = `${this.getMyTeamsURL}/${userId}`;
+    return this.http.get<Response>(url)
       .pipe(
         catchError((error: any) => {
           return throwError(error);
@@ -31,7 +35,24 @@ export class TeamService {
       );
   }
 
-  getTeamInfo(): Observable<any> {
-    throw new Error('Method not implemented.');
+  getTeamInfo(teamId: number): Observable<any> {
+    const url = `${this.getTeamInfoURL}/${teamId}`;
+    return this.http.get<Response>(url)
+      .pipe(
+        catchError((error: any) => {
+          return throwError(error);
+        })
+      );
+    ;
+  }
+
+  softDeleteTeam(teamId: number): Observable<any> {
+    const url = `${this.softDeleteTeamURL}/${teamId}`;
+    return this.http.delete<Response>(url)
+      .pipe(
+        catchError((error: any) => {
+          return throwError(error);
+        })
+      );
   }
 }

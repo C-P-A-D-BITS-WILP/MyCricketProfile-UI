@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TeamManageComponent } from '../team-manage/team-manage.component';
 import { TeamService } from '../team.service';
 
 @Component({
@@ -8,9 +10,9 @@ import { TeamService } from '../team.service';
 })
 export class TeamInfoComponent implements OnInit, OnChanges {
 
-  @Input() teamId!: Number;
+  @Input() teamId!: number;
   @Input() editable: Boolean = false;
-
+  prevTeamId!: number;
 
   team: any = {
     name: 'RCB',
@@ -27,24 +29,35 @@ export class TeamInfoComponent implements OnInit, OnChanges {
     ]
   };
 
-  constructor(private teamService: TeamService) { }
+  constructor(
+    private teamService: TeamService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges() {
-    //  this.teamService.getTeamInfo().subscribe(
-    //    response => {
-    //      console.info(response);
-    //    },
-    //    error => {
-    //      console.error(error);
-    //    }
-    //  );
+    if (this.teamId && this.teamId !== this.prevTeamId) {
+      this.prevTeamId = this.teamId;
+      this.teamService.getTeamInfo(this.teamId).subscribe(
+        response => {
+          console.info(response);
+          this.team = response;
+        },
+        error => {
+          console.error(error);
+        }
+      );
+    }
   }
 
   public openManageTeamDlg(): void {
-
+    let dialogRef = this.dialog.open(TeamManageComponent);
+    dialogRef.afterClosed().subscribe(
+      user => {
+        console.info('Dialog Closed!!');
+      });
   }
 
 }

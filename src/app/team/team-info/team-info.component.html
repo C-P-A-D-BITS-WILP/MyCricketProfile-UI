@@ -1,13 +1,5 @@
 <div class="container">
 
-    <div class="row" *ngIf="editable">
-        <div class="offset-sm-8 col-sm-4 align-right">
-            <button type="button" class="btn btn-secondary" (click)="openManageTeamDlg()">
-                <span>Manage Team</span>
-            </button>
-        </div>
-    </div>
-
     <br />
 
     <div class="row">
@@ -32,7 +24,7 @@
         </div>
 
         <div class="col-md-6">
-            <span class="team-value">{{team.owner}}</span>
+            <span class="team-value">{{team.owner.name}}</span>
         </div>
 
         <div class="col-md-6 align-right">
@@ -40,7 +32,7 @@
         </div>
 
         <div class="col-md-6">
-            <span class="team-value">{{team.captain}}</span>
+            <span class="team-value">{{team.captain.name}}</span>
         </div>
 
         <div class="col-md-6 align-right">
