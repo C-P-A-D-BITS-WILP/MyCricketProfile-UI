@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   public user: SocialUser = new SocialUser;
 
   constructor(
-    public dialog: MatDialog,
+    private dialog: MatDialog,
     private _snackBar: MatSnackBar,
     private authService: SocialAuthService
   ) { }

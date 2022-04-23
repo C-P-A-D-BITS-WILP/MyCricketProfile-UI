@@ -1,42 +1,63 @@
-<table>
-    <tr>
-        <td class="table-title">
-            <span>Team Name</span>
-        </td>
-        <td class="table-value">
-            <span>{{team.name}}</span>
-        </td>
-    </tr>
+<div class="container">
 
-    <tr>
-        <td class="table-title">
-            <span>Team Owner</span>
-        </td>
-        <td class="table-value">
-            <span>{{team.owner}}</span>
-        </td>
-    </tr>
+    <div class="row" *ngIf="editable">
+        <div class="offset-sm-8 col-sm-4 align-right">
+            <button type="button" class="btn btn-secondary" (click)="openManageTeamDlg()">
+                <span>Manage Team</span>
+            </button>
+        </div>
+    </div>
 
-    <tr>
-        <td class="table-title">
-            <span>Team Captain</span>
-        </td>
-        <td class="table-value">
-            <span>{{team.captain}}</span>
-        </td>
-    </tr>
+    <br />
 
-    <tr>
-        <td class="table-title">
-            <span>Team Location</span>
-        </td>
-        <td class="table-value">
-            <span>{{team.location}}</span>
-        </td>
-    </tr>
+    <div class="row">
+        <div class="col-md-6 align-right">
+            <span class="team-header">Team Name</span>
+        </div>
 
-</table>
+        <div class="col-md-6">
+            <span class="team-value">{{team.name}}</span>
+        </div>
 
-<span class="sub-title">Players</span>
-<mat-list-item *ngFor="let player of team.players" class="player-list">{{player.name}}
-</mat-list-item>
+        <div class="col-md-6 align-right">
+            <span class="team-header">Identifier</span>
+        </div>
+
+        <div class="col-md-6">
+            <span class="team-value">{{team.identifier}}</span>
+        </div>
+
+        <div class="col-md-6 align-right">
+            <span class="team-header">Team Owner</span>
+        </div>
+
+        <div class="col-md-6">
+            <span class="team-value">{{team.owner}}</span>
+        </div>
+
+        <div class="col-md-6 align-right">
+            <span class="team-header">Team Captain</span>
+        </div>
+
+        <div class="col-md-6">
+            <span class="team-value">{{team.captain}}</span>
+        </div>
+
+        <div class="col-md-6 align-right">
+            <span class="team-header">Team Location</span>
+        </div>
+
+        <div class="col-md-6">
+            <span class="team-value">{{team.location}}</span>
+        </div>
+    </div>
+
+    <br /><br />
+
+    <span class="page-subtitle">Team Members</span>
+
+    <mat-list-item *ngFor="let player of team.players" class="player-list">
+        {{player.name}}
+    </mat-list-item>
+
+</div>

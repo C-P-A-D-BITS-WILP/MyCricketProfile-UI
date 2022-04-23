@@ -43,6 +43,8 @@ import { UserProfileComponent } from './common/user-profile/user-profile.compone
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TeamInfoComponent } from './team/team-info/team-info.component';
+import { TeamCreateComponent } from './team/team-create/team-create.component';
+import { TeamManageComponent } from './team/team-manage/team-manage.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { TeamInfoComponent } from './team/team-info/team-info.component';
     SearchPlayerComponent,
     MatchHomeComponent,
     UserProfileComponent,
-    TeamInfoComponent
+    TeamInfoComponent,
+    TeamCreateComponent,
+    TeamManageComponent
   ],
   imports: [
     BrowserModule,

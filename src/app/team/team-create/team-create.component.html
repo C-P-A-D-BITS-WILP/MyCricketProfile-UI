@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Create Team</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="standard">
+        <mat-label>Team Name</mat-label>
+        <input matInput placeholder="Name" [(ngModel)]="teamName">
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="standard">
+        <mat-label>Team Location</mat-label>
+        <input matInput placeholder="Location"  [(ngModel)]="teamLocation">
+        <mat-icon matSuffix>place</mat-icon>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close (click)="createTeam()">Submit</button>
+    <button mat-button mat-dialog-close>Close</button>
+</div>

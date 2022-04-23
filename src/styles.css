@@ -1,3 +1,5 @@
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body, app-root { 
@@ -46,4 +48,18 @@ match-card {
     color: rgb(100 149 237);
     font-size: 24px;
     font-weight: 500;
+}
+
+.page-subtitle {
+    color: rgb(100 149 237);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.align-right {
+    text-align: right;
+}
+
+a:hover {
+    color: darkgray !important;
 }

@@ -1,47 +1,76 @@
 <div class="parent-container">
-
     <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);" class="tab-group">
-        <mat-tab label="Browse Team">
-            <ng-template matTabContent>
-                <mat-grid-list cols="6" >
-                    <mat-grid-tile colspan="2" class="grid-tile" style="display: block;">
-                        <mat-form-field class="team-search-field" appearance="fill">
+
+        <!-- Browse Teams -->
+        <mat-tab label="Browse Team" class="tab">
+            <div class="container">
+                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                <div class="row">
+                    <div class="col-4 team-list-containter">
+                        <mat-form-field class="col-12 team-search-field" appearance="fill">
                             <mat-label>Team Name</mat-label>
                             <input matInput type="text" [(ngModel)]="value">
                             <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
                                 <mat-icon>close</mat-icon>
                             </button>
-                        </mat-form-field><br/>
-                        <mat-list class="team-list-container">
+                        </mat-form-field>
+                        <mat-list class="col-12">
                             <div *ngFor="let team of teams">
                                 <mat-list-item class="team-list" (click)='populateTeamData(team.id)'>{{team.name}}
                                 </mat-list-item>
                                 <mat-divider></mat-divider>
                             </div>
                         </mat-list>
-                    </mat-grid-tile>
-                    <mat-grid-tile colspan="4">
-                        <team-info [teamId]="selectedTeamId"></team-info>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </ng-template>
-        </mat-tab>
-        <mat-tab label="My Team">
-            <ng-template matTabContent>
-                <mat-form-field class="team-search-field" appearance="fill">
-                    <mat-label>Team Name</mat-label>
-                    <input matInput type="text" [(ngModel)]="value">
-                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                        <mat-icon>close</mat-icon>
-                    </button>
-                </mat-form-field>
-                <mat-list class="team-list-container">
-                    <div *ngFor="let team of teams">
-                        <mat-list-item class="team-list" [routerLink]="['/team', team.id]">{{team.name}}</mat-list-item>
-                        <mat-divider></mat-divider>
                     </div>
-                </mat-list>
-            </ng-template>
+
+                    <div class="col-md-auto">
+                        &nbsp;
+                    </div>
+
+                    <team-info class="col-6" [teamId]="selectedTeamId" [editable]="false"></team-info>
+                </div>
+            </div>
         </mat-tab>
+
+        <!-- My Teams -->
+        <mat-tab label="My Team" class="tab">
+            <div class="container">
+                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                <div class="row">
+                    <div class="col-4 team-list-containter">
+                        <div class = "row">
+                            <div class="col-10 search-bar">
+                                <mat-form-field class="team-search-field" appearance="fill">
+                                    <mat-label>Team Name</mat-label>
+                                    <input matInput type="text" [(ngModel)]="value">
+                                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-2 create-btn">
+                                <button type="button" class="btn btn-success btn-sm" (click)="openCreateTeamDlg()">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <mat-list class="col-12 team-list-container">
+                            <div *ngFor="let team of teams">
+                                <mat-list-item class="team-list" (click)='populateTeamData(team.id)'>{{team.name}}
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-list>
+                    </div>
+
+                    <div class="col-md-auto">
+                        &nbsp;
+                    </div>
+
+                    <team-info class="col-6" [teamId]="selectedTeamId" [editable]="true"></team-info>
+                </div>
+            </div>
+        </mat-tab>
+
     </mat-tab-group>
 </div>

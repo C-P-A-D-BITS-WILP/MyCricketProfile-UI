@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TeamCreateComponent } from '../team-create/team-create.component';
 import { TeamService } from '../team.service';
 
 @Component({
@@ -18,7 +20,10 @@ export class TeamHomeComponent implements OnInit {
     name: 'ancd'
   }];
 
-  constructor(private teamService: TeamService) { }
+  constructor(
+    private teamService: TeamService,
+    private dialog: MatDialog,
+    ) { }
 
   ngOnInit(): void {
     this.selectedTabIndex = 0;
@@ -60,5 +65,13 @@ export class TeamHomeComponent implements OnInit {
 
   public populateTeamData(teamId: any): void {
     this.selectedTeamId = teamId;
+  }
+
+  public openCreateTeamDlg(): void {
+    let dialogRef = this.dialog.open(TeamCreateComponent);
+    dialogRef.afterClosed().subscribe(
+      user => {
+        console.info('Dialog Closed!!');
+    });
   }
 }

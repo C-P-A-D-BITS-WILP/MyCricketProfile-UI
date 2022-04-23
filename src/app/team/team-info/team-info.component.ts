@@ -9,13 +9,17 @@ import { TeamService } from '../team.service';
 export class TeamInfoComponent implements OnInit, OnChanges {
 
   @Input() teamId!: Number;
+  @Input() editable: Boolean = false;
+
+
   team: any = {
     name: 'RCB',
     owner: 'United Sprites',
     captain: 'Faf Du Plessis',
+    identifier: '#xbyzj',
     location: 'Bengaluru',
     players: [
-      { name: 'Kohli' },
+      { name: 'Virat' },
       { name: 'Faf' },
       { name: 'DK' },
       { name: 'Josh' },
@@ -29,8 +33,6 @@ export class TeamInfoComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.teamId);
-
     //  this.teamService.getTeamInfo().subscribe(
     //    response => {
     //      console.info(response);
@@ -40,4 +42,9 @@ export class TeamInfoComponent implements OnInit, OnChanges {
     //    }
     //  );
   }
+
+  public openManageTeamDlg(): void {
+
+  }
+
 }
