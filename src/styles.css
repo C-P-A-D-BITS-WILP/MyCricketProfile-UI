@@ -63,3 +63,15 @@ match-card {
 a:hover {
     color: darkgray !important;
 }
+
+.stretch {
+    width: 100%;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.green {
+    color: green;
+}

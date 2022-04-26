@@ -27,6 +27,35 @@
         </mat-form-field>
 
     </div>
+
+    <br /><br />
+
+    <table class="stretch center-align">
+        <tr>
+            <th>Player</th>
+            <th>Confirmation Status</th>
+        </tr>
+        <tr *ngFor="let player of team.players">
+            <td>{{player.name}}</td>
+            <td>
+                <span *ngIf="player.playerStatus === 'Confirmed'" class="material-icons green player-status" [matMenuTriggerFor]="confirm_menu">
+                    check_circle
+                </span>
+                <span *ngIf="player.playerStatus === 'Pending'" class="material-icons yellow player-status" [matMenuTriggerFor]="pending_menu">
+                    warning
+                </span>
+                <mat-menu #confirm_menu="matMenu" xPosition="before" yPosition="below">
+                    <button mat-menu-item>Remove</button>
+                </mat-menu>
+
+                <mat-menu #pending_menu="matMenu" xPosition="before" yPosition="below">
+                    <button mat-menu-item>Accept</button>
+                    <button mat-menu-item>Reject</button>
+                </mat-menu>
+            </td>
+        </tr>
+    </table>
+
 </div>
 
 <div mat-dialog-actions align="end">

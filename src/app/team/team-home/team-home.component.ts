@@ -78,9 +78,6 @@ export class TeamHomeComponent implements OnInit {
   }
 
   manageTeam(teamId: number): void {
-    // let dialogRef = dialog.open(YourDialog, {
-    //   data: { name: 'austin' },
-    // });
     let dialogRef = this.dialog.open(TeamManageComponent, { data: { teamId: teamId }, });
     dialogRef.afterClosed().subscribe(
       user => {

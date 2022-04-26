@@ -1,1 +1,85 @@
-<p>tournament-home works!</p>
+<div class="parent-container">
+    <mat-tab-group [(selectedIndex)]="selectedTabIndex" (selectedTabChange)="onTabChanged($event);" class="tab-group">
+
+        <!-- Browse Tournaments -->
+        <mat-tab label="Browse Tournament" class="tab">
+            <div class="container">
+                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                <div class="row">
+                    <div class="col-4 tournament-list-containter">
+                        <mat-form-field class="col-12 tournament-search-field" appearance="fill">
+                            <mat-label>Tournament Name</mat-label>
+                            <input matInput type="text" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <mat-list class="col-12">
+                            <div *ngFor="let tournament of tournaments">
+                                <mat-list-item class="tournament-list" (click)='populateTournamentData(tournament.id)'>{{tournament.name}}
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-list>
+                    </div>
+
+                    <div class="col-md-auto">
+                        &nbsp;
+                    </div>
+
+                    <!-- <tournament-info class="col-6" [tournamentId]="selectedTournamentId" [editable]="false"></tournament-info> -->
+                </div>
+            </div>
+        </mat-tab>
+
+        <!-- My Tournaments -->
+        <mat-tab label="My Tournament" class="tab">
+            <div class="container">
+                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                <div class="row">
+                    <div class="col-4 tournament-list-containter">
+                        <div class = "row">
+                            <div class="col-10 search-bar">
+                                <mat-form-field class="tournament-search-field" appearance="fill">
+                                    <mat-label>Tournament Name</mat-label>
+                                    <input matInput type="text" [(ngModel)]="value">
+                                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-2 create-btn">
+                                <button type="button" class="btn btn-success btn-sm" (click)="openCreateTournamentDlg()">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <mat-list class="col-12 tournament-list-container">
+                            <div *ngFor="let tournament of tournaments">
+                                <mat-list-item class="tournament-list" (click)='populateTournamentData(tournament.id)'>
+                                    <span class="col-sm-10">{{tournament.name}}</span>
+                                    <button class="col-sm-2" mat-icon-button [matMenuTriggerFor]="menu">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item (click)="manageTournament(tournament.id)">Manage Tournament</button>
+                                        <button mat-menu-item (click)="deleteTournament(tournament.id)">Delete Tournament</button>
+                                      </mat-menu>
+                                </mat-list-item>
+
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-list>
+                    </div>
+
+                    <div class="col-md-auto">
+                        &nbsp;
+                    </div>
+
+                    <!-- <tournament-info class="col-6" [tournamentId]="selectedTournamentId" [editable]="true"></tournament-info> -->
+                </div>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+</div>
