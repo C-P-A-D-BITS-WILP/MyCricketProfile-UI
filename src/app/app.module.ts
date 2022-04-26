@@ -16,6 +16,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from "angularx-social-logi
 import { GoogleLoginProvider } from "angularx-social-login";
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,6 +26,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -45,6 +47,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TeamInfoComponent } from './team/team-info/team-info.component';
 import { TeamCreateComponent } from './team/team-create/team-create.component';
 import { TeamManageComponent } from './team/team-manage/team-manage.component';
+import { TournamentInfoComponent } from './tournament/tournament-info/tournament-info.component';
+import { TournamentManageComponent } from './tournament/tournament-manage/tournament-manage.component';
+import { TournamentCreateComponent } from './tournament/tournament-create/tournament-create.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +70,10 @@ import { TeamManageComponent } from './team/team-manage/team-manage.component';
     UserProfileComponent,
     TeamInfoComponent,
     TeamCreateComponent,
-    TeamManageComponent
+    TeamManageComponent,
+    TournamentInfoComponent,
+    TournamentManageComponent,
+    TournamentCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +101,9 @@ import { TeamManageComponent } from './team/team-manage/team-manage.component';
     MatSidenavModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [
     LoginService,

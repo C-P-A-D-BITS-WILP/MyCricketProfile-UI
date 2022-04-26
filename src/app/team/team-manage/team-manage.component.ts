@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-team-manage',
@@ -7,17 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamManageComponent implements OnInit {
 
-teamName: String = '';
-teamSize!: Number;
-teamLocation !: String;
+  teamId!: number;
+  teamName: String = '';
+  teamSize!: number;
+  teamLocation !: String;
+  team: any = {};
 
-  constructor() { }
+  constructor(
+    private teamService: TeamService,
+    @Inject(MAT_DIALOG_DATA) public data: {
+      teamId: number
+    }) {
+    this.teamId = data.teamId;
+  }
 
   ngOnInit(): void {
+    this.teamService.getTeamInfo(this.teamId).subscribe(
+      response => {
+        console.info(response);
+        this.team = response;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
 
   editTeam(): void {
-
+    console.info(this.team);
   }
 
+  public objectComparisonFunction(option: any, value: any): boolean {
+    return option.id === value.id;
+  }
 }

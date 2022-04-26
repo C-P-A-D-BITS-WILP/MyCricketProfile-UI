@@ -24,7 +24,7 @@ export class TeamHomeComponent implements OnInit {
   constructor(
     private teamService: TeamService,
     private dialog: MatDialog,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.selectedTabIndex = 0;
@@ -74,15 +74,18 @@ export class TeamHomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       user => {
         console.info('Dialog Closed!!');
-    });
+      });
   }
 
   manageTeam(teamId: number): void {
-    let dialogRef = this.dialog.open(TeamManageComponent);
+    // let dialogRef = dialog.open(YourDialog, {
+    //   data: { name: 'austin' },
+    // });
+    let dialogRef = this.dialog.open(TeamManageComponent, { data: { teamId: teamId }, });
     dialogRef.afterClosed().subscribe(
       user => {
         console.info('Dialog Closed!!');
-    });
+      });
   }
 
   deleteTeam(teamId: number): void {

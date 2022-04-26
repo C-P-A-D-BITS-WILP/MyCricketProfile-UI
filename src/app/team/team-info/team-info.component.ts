@@ -42,7 +42,6 @@ export class TeamInfoComponent implements OnInit, OnChanges {
       this.prevTeamId = this.teamId;
       this.teamService.getTeamInfo(this.teamId).subscribe(
         response => {
-          console.info(response);
           this.team = response;
         },
         error => {

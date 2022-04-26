@@ -1,32 +1,35 @@
 <h1 mat-dialog-title>Manage Team</h1>
 
 <div mat-dialog-content>
-    <mat-form-field appearance="standard">
-        <mat-label>Team Name</mat-label>
-        <input matInput placeholder="Name" [(ngModel)]="teamName">
-    </mat-form-field>
+    <div class="row">
+        <mat-form-field appearance="standard" class="col-sm-6">
+            <mat-label>Team Name</mat-label>
+            <input matInput placeholder="Name" [(ngModel)]="team.name">
+        </mat-form-field>
 
-    <br />
 
-    <mat-form-field appearance="standard">
-        <mat-label>Team Location</mat-label>
-        <input matInput placeholder="Eg. Bengaluru"  [(ngModel)]="teamLocation">
-        <mat-icon matSuffix>place</mat-icon>
-    </mat-form-field>
+        <mat-form-field appearance="standard" class="col-sm-6">
+            <mat-label>Team Location</mat-label>
+            <input matInput placeholder="Eg. Bengaluru" [(ngModel)]="team.location">
+            <mat-icon matSuffix>place</mat-icon>
+        </mat-form-field>
 
-    <br />
+        <mat-form-field appearance="standard" class="col-sm-6">
+            <mat-label>Team Size</mat-label>
+            <input matInput type="number" placeholder="Team Size" [(ngModel)]="team.teamSize">
+        </mat-form-field>
 
-    <mat-form-field appearance="standard">
-        <mat-label>Team Size</mat-label>
-        <input matInput type="number" placeholder="Team Size" [(ngModel)]="teamSize">
-    </mat-form-field>
+        <mat-form-field appearance="standard" class="col-sm-6">
+            <mat-label>Team Captain</mat-label>
+            <mat-select [(ngModel)]="team.captain" name="captain" [compareWith]="objectComparisonFunction">
+                <mat-option *ngFor="let player of team.players" [value]="player">{{player.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
 
+    </div>
 </div>
 
-
-
-
 <div mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close (click)="editTeam()">Submit</button>
-    <button mat-button mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="editTeam()">Submit</button>
+    <button mat-raised-button mat-dialog-close>Close</button>
 </div>
