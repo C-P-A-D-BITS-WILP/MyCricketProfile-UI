@@ -1,0 +1,93 @@
+.inner-container {
+    /* padding: 5px; */
+    /* margin: 5px; */
+    border: darkgray solid thin;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.side-menu-list-item {
+    cursor: pointer;
+}
+
+.side-menu-list-item:hover {
+    background-color: cornflowerblue;
+}
+
+.team-search-field {
+    margin: 0 5px;
+    width: 98%;
+}
+
+.team-content {
+    overflow-x: hidden;
+}
+
+.team-side-menu {
+    overflow-x: hidden;
+}
+
+mat-drawer>div {
+    overflow-x: hidden;
+}
+
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}
+
+.grid-tile .mat-grid-tile-content {
+    display: block !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* border-style: solid; */
+    border-width: thin;
+    /* border-radius: 5px; */
+    border-color: lightgray;
+    border-right-style: solid;
+}
+
+.team-list:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.tab-group,
+.mat-tab-body-wrapper,
+.grid-tile,
+.tab,
+.template,
+.grid-list {
+    height: 100%;
+}
+
+mat-tab-body {
+    padding: 5px;
+    ;
+}
+
+.container {
+    width: 100% !important;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.search-bar {
+    padding-right: 5px;
+    padding-bottom: 0;
+}
+
+.create-btn {
+    padding-left: 5px;
+    padding-bottom: 0;
+    padding-top: 6px;
+}
+
+.tournament-list-containter {
+    border-right-style: solid;
+    border-right-color: lightgray;
+    border-right-width: thin;
+}
