@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ɵɵsetComponentScope } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamCreateComponent } from '../team-create/team-create.component';
 import { TeamManageComponent } from '../team-manage/team-manage.component';
@@ -17,9 +17,11 @@ export class TeamHomeComponent implements OnInit {
   selectedTeamId !: number;
   subtab = 1;
   teams = [{
-    id: 10,
-    name: 'ancd'
+    id: 0,
+    name: ''
   }];
+
+  reload: boolean = false;
 
   constructor(
     private teamService: TeamService,
@@ -41,16 +43,22 @@ export class TeamHomeComponent implements OnInit {
   }
 
   public getMyTeamList(): void {
-    const userId = 1;
-    this.teamService.getMyTeams(userId).subscribe(
-      response => {
-        this.teams = response;
-        this.selectedTeamId = this.teams[0].id;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+    const currentSessionUser = sessionStorage.getItem('currentUser');
+
+    if(currentSessionUser) {
+      const userId = JSON.parse(currentSessionUser).id;
+      this.teamService.getMyTeams(userId).subscribe(
+        response => {
+          this.teams = response;
+          this.selectedTeamId = this.teams[0].id;
+        },
+        error => {
+          console.error(error);
+        }
+      );
+    } else {
+      console.error('User not logged in!!');
+    }
   }
 
   public getTeamList(): void {
@@ -67,13 +75,15 @@ export class TeamHomeComponent implements OnInit {
 
   public populateTeamData(teamId: any): void {
     this.selectedTeamId = teamId;
+    this.reload = true;
   }
 
   public openCreateTeamDlg(): void {
     let dialogRef = this.dialog.open(TeamCreateComponent);
     dialogRef.afterClosed().subscribe(
-      user => {
+      team => {
         console.info('Dialog Closed!!');
+        this.getMyTeamList();
       });
   }
 
@@ -81,7 +91,7 @@ export class TeamHomeComponent implements OnInit {
     let dialogRef = this.dialog.open(TeamManageComponent, { data: { teamId: teamId }, });
     dialogRef.afterClosed().subscribe(
       user => {
-        console.info('Dialog Closed!!');
+        this.getMyTeamList();
       });
   }
 

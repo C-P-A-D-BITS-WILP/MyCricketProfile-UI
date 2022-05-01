@@ -1,6 +1,6 @@
 export interface MatchCard {
     id: String,
-    tournament_name: String;
+    tournamentName: String;
     team1: String;
     score1: number;
     wickets1: number;

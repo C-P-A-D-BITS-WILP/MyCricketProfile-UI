@@ -50,6 +50,7 @@ import { TeamManageComponent } from './team/team-manage/team-manage.component';
 import { TournamentInfoComponent } from './tournament/tournament-info/tournament-info.component';
 import { TournamentManageComponent } from './tournament/tournament-manage/tournament-manage.component';
 import { TournamentCreateComponent } from './tournament/tournament-create/tournament-create.component';
+import { MatchAdminHomeComponent } from './match/match-admin-home/match-admin-home.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { TournamentCreateComponent } from './tournament/tournament-create/tourna
     TeamManageComponent,
     TournamentInfoComponent,
     TournamentManageComponent,
-    TournamentCreateComponent
+    TournamentCreateComponent,
+    MatchAdminHomeComponent
   ],
   imports: [
     BrowserModule,

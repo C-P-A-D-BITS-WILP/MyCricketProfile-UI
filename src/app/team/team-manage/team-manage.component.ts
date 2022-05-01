@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TeamService } from '../team.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class TeamManageComponent implements OnInit {
 
   constructor(
     private teamService: TeamService,
+    private dialogRef: MatDialogRef<TeamManageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: {
       teamId: number
     }) {
@@ -35,11 +36,56 @@ export class TeamManageComponent implements OnInit {
     );
   }
 
-  editTeam(): void {
-    console.info(this.team);
+  public editTeam(): void {
+    this.teamService.updateTeam(this.team).subscribe(
+      response => {
+        this.dialogRef.close(response);
+      },
+      error => {
+        this.dialogRef.close();
+      }
+    );
   }
 
   public objectComparisonFunction(option: any, value: any): boolean {
     return option.id === value.id;
   }
+
+  acceptPlayer(playerId: any, arrayIndex: number): void {
+    const teamMemberId = this.team.players[arrayIndex].teamMemberId;
+
+    const data = {
+      'teamMemberId': teamMemberId,
+      'teamId': this.team.id
+    }
+
+    this.teamService.acceptPlayer(data).subscribe(
+      response => {
+        this.team.players[arrayIndex].playerStatus = 'CONFIRMED';
+      },
+      error => {
+        console.error('Error accepting player');
+      }
+    );
+  }
+
+  removePlayer(playerId: any, arrayIndex: number): void {
+    const teamMemberId = this.team.players[arrayIndex].teamMemberId;
+
+    const data = {
+      'teamMemberId': teamMemberId,
+      'teamId': this.team.id
+    }
+
+    this.teamService.removePlayer(data).subscribe(
+      response => {
+        this.team.players.splice(arrayIndex, 1);
+        console.info('Player Removed!');
+      },
+      error => {
+        console.error('Error removing player');
+      }
+    );
+  }
 }
+

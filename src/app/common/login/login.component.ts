@@ -24,6 +24,14 @@ export class LoginComponent implements OnInit {
 
       if (user != null) {
         console.log(user);
+        this.loginService.registerUser(user).subscribe(
+          response => {
+            let currentUser = JSON.stringify(response);
+
+            sessionStorage.setItem('currentUser', currentUser);
+            console.info(currentUser);
+          }
+        );
         this.dialogRef.close(this.user);
       }
     });

@@ -75,3 +75,15 @@ a:hover {
 .green {
     color: green;
 }
+
+.table-header {
+    background-color: lavender;
+}
+
+.table-row-even {
+
+}
+
+.table-row-odd {
+    
+}

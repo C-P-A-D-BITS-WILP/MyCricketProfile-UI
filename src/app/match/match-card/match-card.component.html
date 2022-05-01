@@ -1,17 +1,18 @@
 <mat-card class="match-card">
-    <mat-card-subtitle>{{matchCard.tournament_name}}</mat-card-subtitle>
+    <mat-card-subtitle>{{matchCard.tournamentName}}</mat-card-subtitle>
     <mat-card-content>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <td>{{matchCard.team1}}</td>
-                <td>{{matchCard.score1}}</td>
+                <td>{{matchCard.score1}} - {{matchCard.wickets1}} ({{matchCard.overs1}})</td>
             </tr>
 
             <tr>
                 <td>{{matchCard.team2}}</td>
-                <td>{{matchCard.score2}}</td>
+                <td>{{matchCard.score2}} - {{matchCard.wickets2}} ( {{matchCard.overs2}} )</td>
             </tr>
         </table>
+
         <br />
 
         <p class = 'match-summary'>{{matchCard.summary}}</p>
