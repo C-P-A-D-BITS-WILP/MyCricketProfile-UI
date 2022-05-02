@@ -50,7 +50,12 @@ export class TeamHomeComponent implements OnInit {
       this.teamService.getMyTeams(userId).subscribe(
         response => {
           this.teams = response;
-          this.selectedTeamId = this.teams[0].id;
+
+          if(this.teams.length != 0) {
+            this.selectedTeamId = this.teams[0].id;
+          } else {
+            this.selectedTeamId = -1;
+          }
         },
         error => {
           console.error(error);

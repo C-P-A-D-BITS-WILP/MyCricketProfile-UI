@@ -1,8 +1,8 @@
 .player-score-table {
-    /* border-style: groove; */
     border-color: black;
     border-width: thin;
     width: 100%;
+    margin-top: 10px;
 }
 
 .player-score-table-header {
@@ -20,4 +20,13 @@
 
 table {
     text-align: center;
+}
+
+.row-header {
+    text-align: right;
+    font-weight: bold;
+}
+
+.spacer {
+    padding: 5px;
 }

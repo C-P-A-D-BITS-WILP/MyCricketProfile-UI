@@ -12,7 +12,7 @@ body {
 
 .content-outer-container {
     background-color: lightgray;
-    height: 80%;
+    height: 86%;
     padding: 10px;
 }
 
@@ -41,7 +41,7 @@ match-card {
     border-radius: 5px;
     /* text-align: center; */
     padding: 16px;
-    height: 95%;
+    height: 100%;
 }
 
 .page-title {

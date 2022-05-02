@@ -2,48 +2,80 @@
     <span class="page-title">{{player.name}}</span>
 
     <br /> <br />
-    <span class="page-sub-title">Batting Summary</span>
-    <table class="player-score-table">
-        <thead class="player-score-table-header">
-            <tr>
-                <th *ngFor="let colHeaders of battingColHeaders">{{colHeaders}}</th>
-            </tr>
-        </thead>
-        <tbody class="player-score-table-body">
-            <tr>
-                <td>{{player.score.matches}}</td>
-                <td>{{player.score.battingInnings}}</td>
-                <td>{{player.score.notOut}}</td>
-                <td>{{player.score.runsScored}}</td>
-                <td>{{player.score.highestScore}}</td>
-                <td>{{player.score.strikeRate}}</td>
-                <td>{{player.score.battingAvg}}</td>
-                <td>{{player.score.fifties}}</td>
-                <td>{{player.score.hundreds}}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <br /><br />
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="page-sub-title">Player Profile</span>
 
-    <span class="page-sub-title">Bowling Summary</span>
-    <table class="player-score-table">
-        <thead class="table-header">
-            <tr>
-                <th *ngFor="let colHeaders of bowlingColHeaders">{{colHeaders}}</th>
-            </tr>
-        </thead>
-        <tbody class="player-score-table-body">
-            <tr>
-                <td>{{player.score.matches}}</td>
-                <td>{{player.score.bowlingInnings}}</td>
-                <td>{{player.score.ballsBowled}}</td>
-                <td>{{player.score.runsGiven}}</td>
-                <td>{{player.score.wickets}}</td>
-                <td>{{player.score.bowlingAvg}}</td>
-                <td>{{player.score.economy}}</td>
-                <td>{{player.score.fiver}}</td>
-            </tr>
-        </tbody>
-    </table>
+            <br /><br />
+
+            <div class="row spacer">
+                <div class="col-sm-6 row-header">Date Of Birth</div>
+                <div class="col-sm-6">{{player.dob}}</div>
+            </div>
+
+            <div class="row spacer">
+                <div class="col-sm-6 row-header">Role</div>
+                <div class="col-sm-6">{{player.role}}</div>
+            </div>
+
+            <div class="row spacer">
+                <div class="col-sm-6 row-header">Batting Style</div>
+                <div class="col-sm-6">{{player.battingStyle}}</div>
+            </div>
+
+            <div class="row spacer">
+                <div class="col-sm-6 row-header">Bowling Style</div>
+                <div class="col-sm-6">{{player.bowlingStyle}}</div>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <span class="page-sub-title">Batting Summary</span>
+            <table class="player-score-table">
+                <thead class="player-score-table-header">
+                    <tr>
+                        <th *ngFor="let colHeaders of battingColHeaders">{{colHeaders}}</th>
+                    </tr>
+                </thead>
+                <tbody class="player-score-table-body">
+                    <tr>
+                        <td>{{player.score.matches}}</td>
+                        <td>{{player.score.battingInnings}}</td>
+                        <td>{{player.score.notOut}}</td>
+                        <td>{{player.score.runsScored}}</td>
+                        <td>{{player.score.highestScore}}</td>
+                        <td>{{player.score.strikeRate}}</td>
+                        <td>{{player.score.battingAvg}}</td>
+                        <td>{{player.score.fifties}}</td>
+                        <td>{{player.score.hundreds}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br /><br />
+
+            <span class="page-sub-title">Bowling Summary</span>
+            <table class="player-score-table">
+                <thead class="table-header">
+                    <tr>
+                        <th *ngFor="let colHeaders of bowlingColHeaders">{{colHeaders}}</th>
+                    </tr>
+                </thead>
+                <tbody class="player-score-table-body">
+                    <tr>
+                        <td>{{player.score.matches}}</td>
+                        <td>{{player.score.bowlingInnings}}</td>
+                        <td>{{player.score.ballsBowled}}</td>
+                        <td>{{player.score.runsGiven}}</td>
+                        <td>{{player.score.wickets}}</td>
+                        <td>{{player.score.bowlingAvg}}</td>
+                        <td>{{player.score.economy}}</td>
+                        <td>{{player.score.fiver}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>

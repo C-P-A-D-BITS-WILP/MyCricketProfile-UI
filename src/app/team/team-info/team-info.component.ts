@@ -19,7 +19,7 @@ export class TeamInfoComponent implements OnInit, OnChanges {
 
   rqstJoinBtn: boolean = false;
 
-  team: any = { 
+  team: any = {
     owner: {},
     captain: {}
   };
@@ -32,14 +32,18 @@ export class TeamInfoComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     const currentSessionUser = sessionStorage.getItem('currentUser');
 
-    if(currentSessionUser) {
+    if (currentSessionUser) {
       this.currentUser = JSON.parse(currentSessionUser);
     }
   }
 
   ngOnChanges() {
     this.reload = false;
-    if (this.teamId && this.teamId !== this.prevTeamId) {
+    this.team = {
+      owner: {},
+      captain: {}
+    };
+    if (this.teamId && this.teamId != -1 && this.teamId !== this.prevTeamId) {
       this.prevTeamId = this.teamId;
       this.teamService.getTeamInfo(this.teamId).subscribe(
         response => {
@@ -61,7 +65,7 @@ export class TeamInfoComponent implements OnInit, OnChanges {
   }
 
   public showJoinBtn(): boolean {
-    if(this.team.owner.id === this.currentUser.id ) {
+    if (this.team.owner.id === this.currentUser.id) {
       return false;
     } else {
       return true;
